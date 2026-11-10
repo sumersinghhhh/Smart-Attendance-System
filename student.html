@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1">
+
+<title>Student Portal | SecureAttend</title>
+
+<link rel="stylesheet"
+      href="style.css">
+
+<script src="https://unpkg.com/html5-qrcode"
+        type="text/javascript">
+</script>
+```
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+```
+<a href="index.html"
+   class="logo">
+
+    ✓ SecureAttend
+
+</a>
+
+
+<div class="nav-buttons">
+
+    <a href="teacher.html">
+        Teacher Portal
+    </a>
+
+</div>
+```
+
+</nav>
+
+<div class="student-page">
+
+```
+<div class="page-title">
+
+    <div class="badge">
+        STUDENT ATTENDANCE
+    </div>
+
+    <h1>
+        Mark Your Attendance
+    </h1>
+
+    <p>
+        Complete all verification steps.
+    </p>
+
+</div>
+
+
+
+<!-- STEP 1 -->
+
+<div id="step1"
+     class="student-card">
+
+    <div class="step-circle">
+        1
+    </div>
+
+    <h2>
+        Select Your Identity
+    </h2>
+
+
+    <select id="studentSelect">
+
+        <option value="">
+            Select Student
+        </option>
+
+    </select>
+
+
+    <button class="primary-btn full-btn"
+            onclick="confirmStudent()">
+
+        Continue →
+
+    </button>
+
+</div>
+
+
+
+<!-- STEP 2 -->
+
+<div id="step2"
+     class="student-card hidden">
+
+    <div class="step-circle">
+        2
+    </div>
+
+    <h2>
+        Scan Dynamic QR
+    </h2>
+
+    <p>
+        Scan the QR displayed on the teacher's screen.
+    </p>
+
+
+    <div id="reader">
+
+    </div>
+
+
+    <button class="secondary-btn full-btn"
+            onclick="demoValidateQR()">
+
+        Demo: Validate Active QR
+
+    </button>
+
+</div>
+
+
+
+<!-- STEP 3 -->
+
+<div id="step3"
+     class="student-card hidden">
+
+    <div class="step-circle">
+        3
+    </div>
+
+    <h2>
+        Face Verification
+    </h2>
+
+    <p>
+        Position your face clearly in the camera.
+    </p>
+
+
+    <div class="face-timer">
+
+        <span id="faceTimer">
+            15
+        </span>
+
+        seconds remaining
+
+    </div>
+
+
+    <div class="camera-box">
+
+        <video id="faceVideo"
+               autoplay
+               playsinline>
+
+        </video>
+
+    </div>
+
+
+    <button class="primary-btn full-btn"
+            onclick="verifyFace()">
+
+        Verify Face
+
+    </button>
+
+
+    <p class="small-note">
+        Prototype demo: camera verification workflow is simulated.
+    </p>
+
+</div>
+
+
+
+<!-- SUCCESS -->
+
+<div id="step4"
+     class="student-card hidden success-card">
+
+    <div class="success-mark">
+        ✓
+    </div>
+
+
+    <h2>
+        Attendance Marked!
+    </h2>
+
+
+    <p id="successText">
+
+    </p>
+
+
+    <div class="attendance-code">
+
+        <span>Attendance ID</span>
+
+        <strong id="attendanceId">
+
+        </strong>
+
+    </div>
+
+
+    <a href="index.html"
+       class="primary-btn">
+
+        Back to Home
+
+    </a>
+
+</div>
+```
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+```
+<title>Teacher Dashboard | SecureAttend</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+```
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+```
+<a href="index.html" class="logo">
+    ✓ SecureAttend
+</a>
+
+<div class="nav-buttons">
+    <a href="student.html">Student Portal</a>
+</div>
+```
+
+</nav>
+
+<div class="dashboard">
+
+```
+<div class="dashboard-header">
+
+    <div>
+        <div class="badge">TEACHER DASHBOARD</div>
+
+        <h1>Attendance Session</h1>
+
+        <p>
+            Generate a temporary QR for students.
+        </p>
+    </div>
+
+    <button class="danger-btn" onclick="resetAttendance()">
+        Reset Attendance
+    </button>
+
+</div>
+
+
+<div class="dashboard-grid">
+
+
+    <!-- QR SECTION -->
+
+    <div class="card qr-card">
+
+        <h2>Dynamic QR Session</h2>
+
+        <p id="sessionStatus">
+            No active session.
+        </p>
+
+        <div id="qrcode" class="qrcode">
+            Generate QR
+        </div>
+
+        <div class="timer-section">
+
+            <span>QR expires in</span>
+
+            <div id="qrTimer" class="big-timer">
+                00
+            </div>
+
+            <span>seconds</span>
+
+        </div>
+
+        <button class="primary-btn full-btn"
+                onclick="generateSession()">
+
+            Generate New QR
+
+        </button>
+
+    </div>
+
+
+    <!-- STATS -->
+
+    <div class="card">
+
+        <h2>Live Statistics</h2>
+
+        <div class="stats">
+
+            <div class="stat-box">
+                <span>Total Students</span>
+                <strong id="totalStudents">5</strong>
+            </div>
+
+            <div class="stat-box">
+                <span>Present</span>
+                <strong id="presentCount">0</strong>
+            </div>
+
+            <div class="stat-box">
+                <span>Absent</span>
+                <strong id="absentCount">5</strong>
+            </div>
+
+        </div>
+
+        <h3 class="recent-title">
+            Recent Attendance
+        </h3>
+
+        <div id="attendanceList"
+             class="attendance-list">
+
+            No attendance yet.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="card table-card">
+
+    <div class="table-header">
+
+        <h2>Complete Attendance Record</h2>
+
+        <button class="secondary-btn"
+                onclick="downloadCSV()">
+
+            Download CSV ↓
+
+        </button>
+
+    </div>
+
+    <div class="table-wrapper">
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Name</th>
+                    <th>Roll Number</th>
+                    <th>Time</th>
+                    <th>Status</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="attendanceTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+```
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
